@@ -1,0 +1,166 @@
+//Стиль текста для хедера
+@font-face {
+    font-family: Gothic; /* Имя шрифта */
+        src: url(../fonts/Gothic/AllegrettoScriptOne.ttf); /* Путь к файлу со шрифтом */
+   }
+
+//миксин для создания адаптивного текста
+@mixin text-mix($w400, $w400-500, $w500-600, $w600-768, $w768-800, $w800-900, $w900-992, $w992-1200, $w1200) {
+            /*<400*/
+            @media (max-width: 400px) {
+                font-size: $w400 !important;
+            }
+            /*400-500*/
+            @media only screen and (min-width: 400px) and (max-width: 500px) {
+                font-size: $w400-500 !important;
+            }
+            /*500-600*/
+            @media only screen and (min-width: 500px) and (max-width: 600px) {
+                font-size: $w500-600 !important;
+            }
+            /*600-768*/
+            @media only screen and (min-width: 600px) and (max-width: 768px) {
+                font-size: $w600-768 !important;
+            }
+            /*768-800*/
+            @media only screen and (min-width: 768px) and (max-width: 800px) {
+                font-size: $w768-800 !important;
+            }
+            /*800-900*/
+            @media only screen and (min-width: 800px) and (max-width: 900px) {
+                font-size: $w800-900 !important;
+            }
+            /*900-992*/
+            @media only screen and (min-width: 900px) and (max-width: 992px) {
+                font-size: $w900-992 !important;
+            }
+            /*992-1200*/
+            @media only screen and (min-width: 992px) and (max-width: 1200px) {
+                font-size: $w992-1200 !important;
+            }
+            /*>1200*/
+            @media (min-width: 1200px) {
+                font-size: $w1200 !important;
+            }
+}
+
+
+        @media all and (orientation:portrait) {
+        }
+        @media all and (orientation:landscape) {
+        }
+
+
+
+
+
+
+html {
+    
+//Минимальные значения для боди и сброс стилей
+    body{
+            #nubexDiv {
+                z-index: -1;
+                width: 100%; 
+                height:100%; 
+                display:block;
+                top: 0; bottom: 0; left: 0; right: 0;
+                position: fixed;
+                overflow: hidden;
+                    #nubexVideo {
+                    top: 0; left: 0;
+                    position: absolute;
+                    width: auto; height: auto;
+                    min-width: 100%; 
+                    min-height: 100%; 
+                }
+            }
+            
+        
+        
+        
+//        Адаптивная ширина для контейнеров
+        .adaptive_container{
+            @media (max-width: 1200px){
+                width: 1200px;
+            }
+            @media (max-width: 992px){
+                width: 992px;
+            }
+            @media (max-width: 600px){
+                width: 600px;
+            }
+            @media (max-width: 500px){
+                width: 500px;
+            }
+        }
+//Адаптивніе размері текстов
+    .big_text{  
+        @include text-mix(
+        /*<400*/    6.5vw,
+        /*400-500*/ 6.5vw,
+        /*500-600*/ 6.5vw,
+        /*600-768*/ 3vw,
+        /*768-800*/ 3vw,
+        /*800-900*/ 3vw,
+        /*900-992*/ 3vw,
+       /*992-1200*/ 2.8vw,
+        /*>1200*/   2.8vw
+         );     
+    }
+    .average_text{    
+        @include text-mix(
+            /*<400*/    4vw,
+            /*400-500*/ 3vw,
+            /*500-600*/ 2.3vw,
+            /*600-768*/ 2.1vw,
+            /*768-800*/ 1.9vw,
+            /*800-900*/ 1.6vw,
+            /*900-992*/ 1.4vw,
+           /*992-1200*/ 1.3vw,
+            /*>1200*/   1.2vw
+             );      
+    }
+    .little_text{    
+        @include text-mix(
+            /*<400*/    3vw,
+            /*400-500*/ 2.5vw,
+            /*500-600*/ 2vw,
+            /*600-768*/ 1.8vw,
+            /*768-800*/ 1.4vw,
+            /*800-900*/ 1.3vw,
+            /*900-992*/ 1.2vw,
+           /*992-1200*/ 1.1vw,
+            /*>1200*/   1vw
+             );      
+    }
+
+
+//Центрирование внутреннего блока
+.out_bl {
+  text-align: center;
+}
+.in_bl {
+  display: inline-block;
+  vertical-align: middle;
+    margin: 0;
+}
+.out_bl:before { /* для IE8+ */
+  content: "";
+  display: inline-block;
+  min-height: inherit;
+  height: 100%;
+  vertical-align: middle;
+}
+        
+        
+ 
+
+
+
+
+
+
+
+    }
+}
