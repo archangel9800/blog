@@ -1,4 +1,5 @@
 <?php
+require_once 'core/library/main.php';
 $url = strtolower($_GET['url']);
 $urlSegments = explode('/', $url);
 $cntrName = (empty($urlSegments[0]))? 'main' : $urlSegments[0];
@@ -9,12 +10,16 @@ if(file_exists('core/controllers/'.$cntrName.'.php')){
     if(function_exists($actionName)){
         $actionName();
     }else{
-        echo '404';
+        show404page();
     }
 }else{
-    echo '404';
+    show404page();
 }
 ?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
