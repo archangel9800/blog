@@ -1,5 +1,9 @@
 <?php
+session_start();
+require_once 'core/configs/main.php';
 require_once 'core/library/main.php';
+require_once 'core/library/validator.php';
+require_once 'core/library/db.php';
 $url = strtolower($_GET['url']);
 $urlSegments = explode('/', $url);
 $cntrName = (empty($urlSegments[0]))? 'main' : $urlSegments[0];
